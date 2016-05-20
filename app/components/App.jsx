@@ -9,31 +9,37 @@ export default class App extends React.Component{
 		notes: [
 		{
 			id: uuid.v4(),
-			task: 'Learn Webpack'
-		},
+			task: 'Learn Webpack'},
 		{
 			id: uuid.v4(),
-			task: 'Learn React'
-		},
+			task: 'Learn React'},
 		{
 			id: uuid.v4(),
-			task: 'Do Laundry'
-		}
-		]
-		
+			task: 'Do Laundry'}
+		]		
 	};
 	}
 	
-	render(){
-	
-	const notes = this.state.notes;
+	render(){	
+		const notes = this.state.notes;
 	
 	return (
 		<div>
-			<ul>{notes.map(note =>
-				<li key={note.id}>{note.task}</li>
-			)}</ul>
-		</div>
-	);
-	}
+        <button onClick={this.addNote}>+</button>
+        <ul>{notes.map(note =>
+          <li key={note.id}>{note.task}</li>
+        )}</ul>
+      </div>
+    );
+  }
+
+addNote = () => {
+    this.setState({
+      notes: this.state.notes.concat([{
+        id: uuid.v4(),
+        task: 'New task'
+      }])
+    });
+  };
+
 }
