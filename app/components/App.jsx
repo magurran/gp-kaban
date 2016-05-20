@@ -2,8 +2,11 @@ import uuid from 'node-uuid';
 import React from 'react';
 
 export default class App extends React.Component{
-	render(){
-		const notes = [
+	constructor(props){
+		super(props);
+	
+	this.state = {
+		notes: [
 		{
 			id: uuid.v4(),
 			task: 'Learn Webpack'
@@ -16,7 +19,14 @@ export default class App extends React.Component{
 			id: uuid.v4(),
 			task: 'Do Laundry'
 		}
-	];
+		]
+		
+	};
+	}
+	
+	render(){
+	
+	const notes = this.state.notes;
 	
 	return (
 		<div>
