@@ -14,7 +14,7 @@ const common = {
 		app : PATHS.app
 	},
 	resolve:{
-		extensions: ['', '.js', 'jsx']
+		extensions: ['', '.js', '.jsx']
 	},	
 	output : {
 		path : PATHS.build,
@@ -26,12 +26,14 @@ const common = {
 			test: /\.css$/,
 			loaders: ['style', 'css'],
 			include: PATHS.app
-	},
-	{
-		test: /\.jsx?$/,
-		loaders: ['babel?cacheDirectory'],
-		include: PATHS.app
-	}
+		},
+		{
+			test: /\.jsx?$/,
+			loaders: [
+				'babel?cacheDirectory,presets[]=react,presets[]=es2015,presets[]=survivejs-kanban'
+			],
+			include: PATHS.app
+		}
 		]}
 	};
 
