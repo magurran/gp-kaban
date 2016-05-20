@@ -5,7 +5,7 @@ import App from './components/App.jsx';
 
 ReactDom.render(<App/>, document.getElementById('app'));
 
-document.body.appendChild(component());
+//document.body.appendChild(component());
 
 module.exports ={
 	plugins:[

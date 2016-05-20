@@ -9,6 +9,8 @@ const PATHS = {
 	build : path.join(__dirname, 'build')
 };
 
+process.env.BABEL_ENV = TARGET;
+
 const common = {
 	entry : {
 		app : PATHS.app
@@ -29,11 +31,9 @@ const common = {
 		},
 		{
 			test: /\.jsx?$/,
-			loaders: [
-				'babel?cacheDirectory,presets[]=react,presets[]=es2015,presets[]=survivejs-kanban'
-			],
+			loaders: ['react-hot', 'babel'],
 			include: PATHS.app
-		}
+		}		
 		]}
 	};
 
