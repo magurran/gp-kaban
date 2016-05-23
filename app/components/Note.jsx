@@ -1,19 +1,20 @@
 import React from 'react';
 
 export default class Note extends React.Component {
+	
 	constructor(props){
 		super(props);
 		
-		this.state={
+		this.state = {
 			editing: false
 		};
 	}
 	
-	render(){
+	render() {
 		if(this.state.editing){
 			return this.renderEdit();
 		}
-		return this.renderEdit();
+		return this.renderNote();
 	}
 	
 	renderEdit = () => {
@@ -30,18 +31,18 @@ export default class Note extends React.Component {
 	
 	renderNote = () => {
 		
-		const onDelete = this.props.onDelete;
-		
-		return(
-			<div onclick={this.edit}>
-				<span>{this.props.task}</span>
-				{onDelete ? this.renderDelete() : null}
-			</div>
-		);
+    const onDelete = this.props.onDelete;
+
+    return (
+		<div onClick={this.edit}>
+			<span>{this.props.task}</span>
+			{onDelete ? this.renderDelete() : null }
+		</div>
+    );
 	};
 	
 	renderDelete = () => {
-		return <button onClick={this.props.onDelete}>x</button>;
+	return <button onClick={this.props.onDelete}>x</button>;
 	};
 	
 	edit = () => {
@@ -62,4 +63,5 @@ export default class Note extends React.Component {
 			this.setState({editing: false});
 		}
 	};
+
 }

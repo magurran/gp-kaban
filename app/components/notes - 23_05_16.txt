@@ -1,0 +1,10 @@
+use websocket for client-server
+
+meteor - isServer or isClient
+package each for client and server 
+
+redux - dumb doesnt have an idea whats in it
+		- smart oragnises dumb and sends stuff down to them
+		
+try find differnece between the 2
+
