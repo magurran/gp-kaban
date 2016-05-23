@@ -1,3 +1,3 @@
 import React from 'react';
 
-export default () => <div>Learn Webpack testing change</div>;
+export default ({task, ...props}) => <div{...props}>{task}</div>;
