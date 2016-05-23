@@ -8,12 +8,14 @@ export default class Note extends React.Component {
 			editing: false
 		};
 	}
+	
 	render(){
 		if(this.state.editing){
 			return this.renderEdit();
 		}
 		return this.renderEdit();
 	}
+	
 	renderEdit = () => {
 		return <input type="text"
 		ref={
@@ -25,17 +27,33 @@ export default class Note extends React.Component {
 		onBlur={this.finishEdit}
 		onKeyPress={this.checkEnter}/>;
 	};
+	
 	renderNote = () => {
-		return <div onClick={this.edit}>{this.props.task}</div>
+		
+		const onDelete = this.props.onDelete;
+		
+		return(
+			<div onclick={this.edit}>
+				<span>{this.props.task}</span>
+				{onDelete ? this.renderDelete() : null}
+			</div>
+		);
 	};
+	
+	renderDelete = () => {
+		return <button onClick={this.props.onDelete}>x</button>;
+	};
+	
 	edit = () => {
 		this.setState({ editing: true});
 	};
+	
 	checkEnter = (e) => {
 		if(e.key ==='Enter'){
 			this.finishedEdit(e);
 		}
-	};	
+	};
+	
 	finishEdit = (e) =>{
 		const value = e.target.value;
 	
