@@ -6,10 +6,35 @@ package each for client and server
 redux - dumb doesnt have an idea whats in it
 		- smart oragnises dumb and sends stuff down to them
 		
-try find differnece between the 2
+try find differnece between the redux and alt
+
+Flux
+A unidirectional data flow is central to the flux pattern.
+Action -> Dispatcher -> Store -> View
+The dispacther, stores and views are independant nodes with distinct inputs and outputs
+The actions are simple objects conatining the new data and an indetifying type property.
+The view may casue a new action to be propagated throughout the system in response to the user ineractions
+				---------Action------
+				|					^
+				v					|
+Action -> Dispatcher -> Store -> View
 
 
+Redux
+Not considered flux by a lot of people
+Has the highest github stats
+Most popular flux implementation
+Simplest of the frameworks
+Assumption that you never muatate your data
+Doesnt lose any of the functionality of Flux, while in many ways a lot simpler
+People really like the documentation
 
+Alt
+Places empahsis on being flux
+People who like it really like it
+Supports ES7 decorators
+Still makes use of Flux's dispatcher
+Merges Flux's action creators and action objects into action functions
+If want meaningful log need to ensure action function names arent mangled by minifier
 
-14:00 meeting image-manager
 
