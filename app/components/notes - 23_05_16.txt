@@ -8,3 +8,8 @@ redux - dumb doesnt have an idea whats in it
 		
 try find differnece between the 2
 
+
+
+
+14:00 meeting image-manager
+
